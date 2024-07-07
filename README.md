@@ -1,3 +1,16 @@
+# Simple Oil Pressure Gauge for ESP 32S3
+
+**Intended Features**
+
+- Touch Support for brightness adjustment
+- additional themes (red trueno theme, white trueno theme, generic white and black theme)
+- 3D printable enclosure
+
+Cleared sketch code of info redundant to readme
+
+------------
+------------
+------------ 
 # Custom Turbo Boost Gauge using ESP32S3 with Round Waveshare IPS Display
 Custom Turbo Boost Gauge using ESP32S3 with Round Waveshare IPS Display
 
