@@ -39,7 +39,11 @@ int sensorADCToPSI(int adc, int sensortype){
 }
 
 int adcToPSI(int adc){
-  return 25 * ((adc + 128) / 1280) - 12.5 //inner funtion converts from adc to voltage and outer goes from voltage to PSI
+  return 25 * adcToVoltage(adc) - 12.5 //inner funtion converts from adc to voltage and outer goes from voltage to PSI
+}
+
+int adcToVoltage(int adc){
+  return (adc + 128) / 1280;
 }
 
 void loop() //for each loop check for a touch input. based on the touch input adjust brightness
@@ -79,6 +83,8 @@ void loop() //for each loop check for a touch input. based on the touch input ad
     //   psi_combined = psi_combined + psi_older[i];
     // }
     // psi_combined = psi_combined / 10; // final pressure value is the average of last 10 readings
+
+    //are the images outputted just based on a sliding scale from 1/60 of the whole reading range???
 
     // // set the image to be displayed based on the PSI pressure,
     // // we have 60 images, and the PSI pressure should be in the range -15 .. 45, i.e., also 60 steps
