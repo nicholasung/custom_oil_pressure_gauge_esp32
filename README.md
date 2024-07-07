@@ -6,7 +6,9 @@
 - additional themes (red trueno theme, white trueno theme, generic white and black theme)
 - 3D printable enclosure
 
-Cleared sketch code of info redundant to readme
+PSI Sensor approximately based on [Walfront sensors](https://www.amazon.ca/Pressure-Transducer-Sender-Sensor-Stainless/dp/B074QPD5RT/ref=sr_1_8?dib=eyJ2IjoiMSJ9.nW82M_vkkfIZq-yWbsSluVE4HvzPtjVZgPRmjNwv27cDEjB53yreXbI0A157-5u4Nx9JTokprpn8aEolgMGT1xILFvEIIzNQ-I6UMCNtQ6beoGm75JP0AMed1z6BAG1fhgW9T46a3MhJdb1An65N5cGWqT5pvH6O-x0R2VKzfsoSpIPEq1URWvnemjhLZd5b7NVm-z7Ewqb1nUu5VO2RVqENSohst09wBukcL_1nAkkvtWBnMaoJcDqS6AEwDx2O6EaBHWNIC-GWSMoHALRdhr-y9srO1LpLPbvZ4hg6rJ0.Hg_ftXmsBgzS_7fAhIzPxBkNEtMw8V81fh-vIYmg-UI&dib_tag=se&keywords=1%2F8+npt+oil+pressure+sensor&qid=1720319761&sr=8-8) with the 100 and 200 psi ratings.
+
+Calibration is not accurate or tested. Use at your own risk. Calculations were very roughly based on [this](https://www.desmos.com/calculator/gyuv0zgpze) quick desmos calculation. Anyone who is more experienced with PSI and this kind of engineering is welcome to do their own calibrations and it would be greatly appreciated. It is beyond my area of expertise for now.
 
 ------------
 ------------

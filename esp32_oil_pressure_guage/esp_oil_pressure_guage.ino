@@ -12,6 +12,7 @@ int mode = 1; // 0 = ping pong animation, 1 = get value from boost pressure sens
 int frame = 0; // current frame
 int frame_inc = 1; // frame increment
 
+int sensortype = 0; // 0=100 PSI rated sensor, 1=200 PSI rated sensor
 void setup()
 {
   Serial.begin(115200); // start serial connection in case we want to print/debug some information
@@ -26,6 +27,20 @@ void setup()
 }
 
 float psi_older[20]; // store a few older readings for smoother readout
+
+int sensorADCToPSI(int adc, int sensortype){
+  switch:
+  sensortype{
+    case 0:
+      return adcToPSI(adc);
+    case 1:
+      return adcToPSI(adc) * 2;
+  }
+}
+
+int adcToPSI(int adc){
+  return 25 * ((adc + 128) / 1280) - 12.5 //inner funtion converts from adc to voltage and outer goes from voltage to PSI
+}
 
 void loop() //for each loop check for a touch input. based on the touch input adjust brightness
 {
@@ -43,11 +58,13 @@ void loop() //for each loop check for a touch input. based on the touch input ad
     } 
 
     tft.pushImage(0, 0, 240, 240, epd_bitmap_allArray[frame]); // draw the fullscreen boost gauge image 
+    // epd_bitmap_allArray is an array of the bitmaps defined in the header files.
 
   } else if (mode == 1) { // 1 = get value from boost pressure sensor
 
     int pot_value = analogRead(4); // read analog in value from the boost pressure sensor 0-4096 
-
+    sensorADCToPSI(pot_value, sensortype); // convert the analog value to PSI pressure
+    
     // float calculated_bar_pressure = (pot_value - 587.0) / 631.0; // calculate BAR pressure based on the voltage, this calculation was done based on measuring analog gauge
     // float calculated_psi_pressure = calculated_bar_pressure * 14.504; // calculate PSI pressure from BAR pressure
 
